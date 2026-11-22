@@ -103,8 +103,6 @@
       margin: 0;
       color: var(--muted);
       font-size: 13px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
       white-space: nowrap;
     }
 
@@ -117,10 +115,6 @@
     }
 
     .hero__intro {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
-      gap: 32px;
-      align-items: end;
       margin-bottom: clamp(36px, 6vw, 72px);
     }
 
@@ -147,26 +141,6 @@
 
     .hero__title .title-line:nth-child(2) > span {
       animation-delay: 0.08s;
-    }
-
-    .hero__aside {
-      padding-bottom: 8px;
-      border-left: 3px solid var(--red);
-      padding-left: 18px;
-    }
-
-    .hero__aside p {
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.45;
-      color: var(--muted);
-      max-width: 28ch;
-    }
-
-    .hero__aside p + p {
-      margin-top: 10px;
-      color: var(--ink);
-      font-weight: 600;
     }
 
     .hero__cta-area {
@@ -246,17 +220,6 @@
       transform: translateY(0) scale(0.99);
     }
 
-    .hero__caption {
-      margin: 22px 0 0;
-      font-size: 15px;
-      color: var(--muted);
-    }
-
-    .hero__caption strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
     /* ---------- Catalog ---------- */
 
     .catalog {
@@ -285,160 +248,103 @@
       margin: 0 0 6px;
       font-size: 14px;
       color: var(--muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       text-align: right;
     }
 
-    .products {
+    .lots {
+      border-top: var(--line);
+    }
+
+    .lot {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(14px, 2vw, 24px);
-    }
-
-    .product {
-      display: flex;
-      flex-direction: column;
-      background: var(--paper);
-      border: var(--line);
-      padding: clamp(20px, 2.6vw, 30px);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .product:hover {
-      transform: translate(-4px, -4px);
-      box-shadow: 8px 8px 0 var(--ink);
-    }
-
-    .product__head {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 6px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(19, 18, 16, 0.22);
-    }
-
-    .product__name {
-      margin: 0;
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: clamp(1.05rem, 1.9vw, 1.35rem);
-      line-height: 1.12;
-      letter-spacing: -0.015em;
-    }
-
-    .product__price {
-      order: -1;
-      flex: none;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(1.9rem, 3vw, 2.5rem);
-      line-height: 1;
-      white-space: nowrap;
-      color: var(--red);
-    }
-
-    .product__art {
-      display: flex;
+      grid-template-columns: minmax(120px, 0.6fr) minmax(0, 1.5fr) minmax(130px, 0.7fr) auto;
       align-items: center;
-      gap: 6px;
-      min-height: 74px;
-      padding: 22px 0;
-      color: var(--red);
-    }
-
-    .product__art span {
-      display: block;
-      width: 26px;
-      height: 26px;
-      border: 3px solid currentColor;
-    }
-
-    .product__art span:nth-child(2) {
-      transform: translateY(8px);
-    }
-
-    .product__art span:nth-child(3) {
-      transform: translateY(-4px);
-    }
-
-    .product__art span:nth-child(4) {
-      transform: translateY(10px);
-    }
-
-    .product__desc {
-      margin: 0 0 24px;
-      font-size: 15px;
-      line-height: 1.45;
-      color: var(--muted);
-      flex-grow: 1;
-    }
-
-    .product__button {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      width: 100%;
-      padding: 16px 18px;
-      background: transparent;
-      border: var(--line);
+      gap: clamp(16px, 3vw, 44px);
+      padding: clamp(16px, 2.2vw, 26px) clamp(8px, 1.4vw, 18px);
+      border-bottom: var(--line);
       color: var(--ink);
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
       text-decoration: none;
       transition: background-color 0.18s ease, color 0.18s ease;
     }
 
-    .product__button::after {
-      content: "";
-      width: 9px;
-      height: 9px;
-      border-top: 2px solid currentColor;
-      border-right: 2px solid currentColor;
-      transform: rotate(45deg);
-      flex: none;
-      transition: transform 0.18s ease;
+    .lot__price {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.9rem, 3.4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+      color: var(--red);
     }
 
-    .product__button:hover {
-      background: var(--red);
-      color: #fff;
-      border-color: var(--red);
+    .lot__name {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(1.05rem, 1.7vw, 1.45rem);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
     }
 
-    .product__button:hover::after {
-      transform: rotate(45deg) translate(2px, -2px);
-    }
-
-    /* ---------- Footer ---------- */
-
-    .site-footer {
-      background: var(--ink);
-      color: var(--paper);
-      padding: 30px 0;
-    }
-
-    .site-footer__inner {
+    .lot__art {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+      gap: 7px;
+      color: var(--red);
+    }
+
+    .lot__art span {
+      display: block;
+      width: 24px;
+      height: 24px;
+      border: 3px solid currentColor;
+    }
+
+    .lot__art span:nth-child(2) {
+      transform: translateY(8px);
+    }
+
+    .lot__art span:nth-child(3) {
+      transform: translateY(-4px);
+    }
+
+    .lot__art span:nth-child(4) {
+      transform: translateY(10px);
+    }
+
+    .lot__buy {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 132px;
+      min-height: 48px;
+      padding: 0 20px;
+      border: var(--line);
       font-size: 13px;
-      letter-spacing: 0.08em;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+      white-space: nowrap;
+      transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
     }
 
-    .site-footer p {
-      margin: 0;
+    @media (hover: hover) {
+      .lot:hover {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .lot:hover .lot__buy {
+        background: var(--red);
+        border-color: var(--red);
+        color: #fff;
+      }
     }
 
-    .site-footer span {
-      color: #9c988d;
+    .lot:focus-visible {
+      outline: 4px solid var(--red);
+      outline-offset: 4px;
     }
 
     /* ---------- Focus & motion ---------- */
@@ -475,26 +381,43 @@
     }
 
     @media (max-width: 860px) {
-      .hero__intro {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
-
       .hero__title {
         max-width: none;
       }
 
-      .hero__aside {
-        max-width: 460px;
+      .lot {
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+          "price buy"
+          "name buy"
+          "art buy";
+        gap: 4px 16px;
+        padding: 18px 8px;
       }
 
-      .products {
-        grid-template-columns: 1fr;
+      .lot__price {
+        grid-area: price;
       }
 
-      .product__art {
-        min-height: 56px;
-        padding: 18px 0;
+      .lot__name {
+        grid-area: name;
+      }
+
+      .lot__art {
+        grid-area: art;
+        padding-top: 6px;
+      }
+
+      .lot__buy {
+        grid-area: buy;
+        align-self: center;
+        min-width: 112px;
+        padding-inline: 14px;
+      }
+
+      .lot__art span {
+        width: 20px;
+        height: 20px;
       }
     }
 
@@ -537,10 +460,21 @@
       .catalog__note {
         text-align: left;
       }
+    }
 
-      .site-footer__inner {
-        flex-direction: column;
-        align-items: flex-start;
+    @media (max-width: 380px) {
+      .lot__price {
+        font-size: 1.65rem;
+      }
+
+      .lot__name {
+        font-size: 0.92rem;
+      }
+
+      .lot__buy {
+        min-width: 96px;
+        padding-inline: 8px;
+        font-size: 11px;
       }
     }
 
@@ -570,7 +504,7 @@
         <span class="brand__mark" aria-hidden="true"></span>
         Приветка
       </a>
-      <p class="header-note">приём заявок открыт</p>
+      <p class="header-note">Приём заявок открыт</p>
     </div>
   </header>
 
@@ -582,10 +516,6 @@
             <span class="title-line"><span>Гои на</span></span>
             <span class="title-line"><span>любой вкус</span></span>
           </h1>
-          <div class="hero__aside">
-            <p>Три комплектации. Одна заявка. Дальше — дело техники.</p>
-            <p>Без лишних вопросов. Почти.</p>
-          </div>
         </div>
 
         <div class="hero__cta-area">
@@ -597,7 +527,6 @@
               Подать заявку
             </a>
           </div>
-          <p class="hero__caption"><strong>Google Forms</strong> · займёт около минуты</p>
         </div>
       </div>
     </section>
@@ -606,65 +535,43 @@
       <div class="page">
         <div class="catalog__head">
           <h2 class="catalog__title" id="catalog-title">Каталог</h2>
-          <p class="catalog__note">оплата в Telegram</p>
+          <p class="catalog__note">Оплата в Telegram</p>
         </div>
 
-        <div class="products">
-          <article class="product">
-            <div class="product__head">
-              <h3 class="product__name">Гой стандартный</h3>
-              <p class="product__price">100 ₽</p>
-            </div>
-            <div class="product__art" aria-hidden="true">
+        <div class="lots">
+          <a class="lot" href="https://t.me/tribute/app?startapp=s16Rk" target="_blank" rel="noopener" aria-label="Купить «Гой стандартный» за 100 рублей">
+            <p class="lot__price">100 ₽</p>
+            <h3 class="lot__name">Гой стандартный</h3>
+            <div class="lot__art" aria-hidden="true">
               <span></span>
             </div>
-            <p class="product__desc">Базовый комплект. Всё, что нужно, чтобы начать.</p>
-            <a class="product__button" href="https://t.me/tribute/app?startapp=s16Rk" target="_blank" rel="noopener" aria-label="Купить «Гой стандартный» за 100 рублей">
-              Купить
-            </a>
-          </article>
+            <span class="lot__buy">Купить</span>
+          </a>
 
-          <article class="product">
-            <div class="product__head">
-              <h3 class="product__name">Гой побольбше</h3>
-              <p class="product__price">300 ₽</p>
-            </div>
-            <div class="product__art" aria-hidden="true">
+          <a class="lot" href="https://t.me/tribute/app?startapp=s16Rl" target="_blank" rel="noopener" aria-label="Купить «Гой побольбше» за 300 рублей">
+            <p class="lot__price">300 ₽</p>
+            <h3 class="lot__name">Гой побольбше</h3>
+            <div class="lot__art" aria-hidden="true">
               <span></span>
               <span></span>
             </div>
-            <p class="product__desc">Заметно больше стандартного. Для тех, кто не мелочится.</p>
-            <a class="product__button" href="https://t.me/tribute/app?startapp=s16Rl" target="_blank" rel="noopener" aria-label="Купить «Гой побольбше» за 300 рублей">
-              Купить
-            </a>
-          </article>
+            <span class="lot__buy">Купить</span>
+          </a>
 
-          <article class="product">
-            <div class="product__head">
-              <h3 class="product__name">Гой в квадрате</h3>
-              <p class="product__price">1000 ₽</p>
-            </div>
-            <div class="product__art" aria-hidden="true">
+          <a class="lot" href="https://t.me/tribute/app?startapp=s16Ro" target="_blank" rel="noopener" aria-label="Купить «Гой в квадрате» за 1000 рублей">
+            <p class="lot__price">1000 ₽</p>
+            <h3 class="lot__name">Гой в квадрате</h3>
+            <div class="lot__art" aria-hidden="true">
               <span></span>
               <span></span>
               <span></span>
               <span></span>
             </div>
-            <p class="product__desc">Максимальная комплектация. Гой, возведённый в степень.</p>
-            <a class="product__button" href="https://t.me/tribute/app?startapp=s16Ro" target="_blank" rel="noopener" aria-label="Купить «Гой в квадрате» за 1000 рублей">
-              Купить
-            </a>
-          </article>
+            <span class="lot__buy">Купить</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="page site-footer__inner">
-      <p>© 2026 Приветка</p>
-      <p><span>Оплата проходит через</span> Tribute</p>
-    </div>
-  </footer>
 </body>
 </html>

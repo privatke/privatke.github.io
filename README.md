@@ -2,7 +2,7 @@
 
 Лендинг с главной кнопкой заявки и тремя товарами.
 
-**Сайт:** https://fowr0.github.io/xn--80adkjm0aht/
+**Сайт:** https://privatke.github.io/
 
 ## Структура
 
